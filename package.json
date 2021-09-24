@@ -1,0 +1,39 @@
+{
+  "name": "electron-webpack-quick-start",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "electron-webpack dev",
+    "compile": "electron-webpack",
+    "dist": "yarn compile && electron-builder",
+    "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null"
+  },
+  "dependencies": {
+    "source-map-support": "^0.5.20"
+  },
+  "devDependencies": {
+    "electron": "15.0.0",
+    "electron-builder": "^22.11.7",
+    "electron-webpack": "^2.8.2",
+    "webpack": "~4.42.1"
+  },
+  "build": {
+    "appId": "your.id",
+    "productName": "A name with ü in it",
+    "icon": "assets/bowl.icns",
+    "mac": {
+      "category": "your.app.category.type",
+      "target": [
+        {
+            "target": "dmg",
+            "arch": ["arm64"]
+        },
+        {
+            "target": "zip",
+            "arch": ["arm64"]
+        }
+    ]
+    }
+  }
+  
+}
